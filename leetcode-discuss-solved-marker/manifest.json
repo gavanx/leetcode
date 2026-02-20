@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "LeetCode CN Discuss Solved Marker",
+  "version": "0.1.0",
+  "description": "Mark solved status for LeetCode problems listed in leetcode.cn Discuss posts.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://leetcode.cn/*", "https://zerotrac.github.io/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.cn/discuss/*", "https://zerotrac.github.io/leetcode_problem_rating*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}

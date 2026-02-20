@@ -1,0 +1,339 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e5]:
+      - navigation [ref=e7]:
+        - list [ref=e9]:
+          - link "LeetCode Logo" [ref=e10] [cursor=pointer]:
+            - /url: /
+            - img "LeetCode Logo" [ref=e471]
+          - listitem [ref=e12]
+        - generic [ref=e14]:
+          - generic [ref=e19]:
+            - generic:
+              - generic:
+                - generic:
+                  - button:
+                    - img
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - img
+                      - generic: 调试中...
+                  - generic:
+                    - generic:
+                      - button [disabled]:
+                        - img
+                      - button [disabled]:
+                        - img
+                      - button [disabled]:
+                        - img
+                      - button [disabled]:
+                        - img
+                      - button [disabled]:
+                        - img
+            - generic [ref=e21]:
+              - button "启用调试功能需要登录" [ref=e23] [cursor=pointer]:
+                - img [ref=e24]
+              - generic [ref=e27]:
+                - button "运行" [ref=e30]:
+                  - img [ref=e32]
+                - button "提交" [ref=e37]:
+                  - img [ref=e39]
+                  - generic [ref=e41]: 提交
+          - generic [ref=e43]:
+            - button "笔记" [ref=e46] [cursor=pointer]:
+              - img [ref=e48]
+            - button "问下 Leet" [ref=e52] [cursor=pointer]:
+              - img [ref=e53]
+        - generic [ref=e58]:
+          - button "布局" [ref=e59] [cursor=pointer]:
+            - button "布局" [ref=e60]:
+              - img [ref=e62]
+          - button "设置" [ref=e64] [cursor=pointer]:
+            - img [ref=e66]
+          - generic [ref=e70]:
+            - generic:
+              - generic:
+                - button:
+                  - generic:
+                    - img
+                - button:
+                  - generic:
+                    - img
+                  - generic: 00:00:00
+                - button:
+                  - generic:
+                    - img
+            - button "计时" [ref=e73] [cursor=pointer]:
+              - img [ref=e76]
+          - generic [ref=e78]:
+            - link "注册" [ref=e79] [cursor=pointer]:
+              - /url: /accounts/signup/?next=%2Fproblems%2Fmaximum-sum-of-almost-unique-subarray%2Fdescription%2F
+            - generic [ref=e80]: 或
+            - link "登录" [ref=e81] [cursor=pointer]:
+              - /url: /accounts/login/?next=%2Fproblems%2Fmaximum-sum-of-almost-unique-subarray%2Fdescription%2F
+          - generic [ref=e84] [cursor=pointer]: Plus 会员
+      - generic [ref=e87]:
+        - generic [ref=e91] [cursor=pointer]:
+          - generic [ref=e94]:
+            - img [ref=e96]
+            - generic [ref=e99]: 题目描述
+          - generic [ref=e103]:
+            - img [ref=e105]
+            - generic [ref=e107]:
+              - generic [ref=e108]: 题解
+              - generic [ref=e109]: 题解
+          - generic [ref=e113]:
+            - img [ref=e115]
+            - generic [ref=e117]:
+              - generic [ref=e118]: 提交记录
+              - generic [ref=e119]: 提交记录
+        - generic [ref=e127] [cursor=pointer]:
+          - img [ref=e129]
+          - generic [ref=e132]: 代码
+        - generic [ref=e137] [cursor=pointer]:
+          - generic [ref=e140]:
+            - img [ref=e142]
+            - generic [ref=e145]: 测试用例
+          - generic [ref=e149]:
+            - img [ref=e151]
+            - generic [ref=e153]:
+              - generic [ref=e154]: 测试结果
+              - generic [ref=e155]: 测试结果
+        - generic [ref=e157]:
+          - generic [ref=e158]:
+            - link "2841. 几乎唯一子数组的最大和" [ref=e162]:
+              - /url: /problems/maximum-sum-of-almost-unique-subarray/
+            - generic [ref=e163]:
+              - generic [ref=e164]: 中等
+              - generic [ref=e165] [cursor=pointer]:
+                - img [ref=e167]
+                - text: 相关标签
+              - generic [ref=e169] [cursor=pointer]:
+                - img "premium lock icon" [ref=e170]
+                - generic [ref=e171]: 相关企业
+              - generic [ref=e172] [cursor=pointer]:
+                - img [ref=e174]
+                - text: 提示
+              - img [ref=e178] [cursor=pointer]
+            - generic [ref=e183]:
+              - paragraph [ref=e184]:
+                - text: 给你一个整数数组
+                - code [ref=e185]: nums
+                - text: 和两个正整数
+                - code [ref=e186]: m
+                - text: 和
+                - code [ref=e187]: k
+                - text: 。
+              - paragraph [ref=e188]:
+                - text: 请你返回
+                - code [ref=e189]: nums
+                - text: 中长度为
+                - code [ref=e190]: k
+                - text: 的
+                - strong [ref=e191]: 几乎唯一
+                - text: 子数组的
+                - strong [ref=e192]: 最大和
+                - text: ，如果不存在几乎唯一子数组，请你返回
+                - code [ref=e193]: "0"
+                - text: 。
+              - paragraph [ref=e194]:
+                - text: 如果
+                - code [ref=e195]: nums
+                - text: 的一个子数组有至少
+                - code [ref=e196]: m
+                - text: 个互不相同的元素，我们称它是
+                - strong [ref=e197]: 几乎唯一
+                - text: 子数组。
+              - paragraph [ref=e198]:
+                - text: 子数组指的是一个数组中一段连续
+                - strong [ref=e199]: 非空
+                - text: 的元素序列。
+              - paragraph [ref=e200]
+              - paragraph [ref=e201]:
+                - strong [ref=e202]: 示例 1：
+              - generic [ref=e203]: 输入：nums = [2,6,7,3,1,7], m = 3, k = 4 输出：18 解释：总共有 3 个长度为 k = 4 的几乎唯一子数组。分别为 [2, 6, 7, 3] ，[6, 7, 3, 1] 和 [7, 3, 1, 7] 。这些子数组中，和最大的是 [2, 6, 7, 3] ，和为 18 。
+              - paragraph [ref=e204]:
+                - strong [ref=e205]: 示例 2：
+              - generic [ref=e206]: 输入：nums = [5,9,9,2,4,5,4], m = 1, k = 3 输出：23 解释：总共有 5 个长度为 k = 3 的几乎唯一子数组。分别为 [5, 9, 9] ，[9, 9, 2] ，[9, 2, 4] ，[2, 4, 5] 和 [4, 5, 4] 。这些子数组中，和最大的是 [5, 9, 9] ，和为 23 。
+              - paragraph [ref=e207]:
+                - strong [ref=e208]: 示例 3：
+              - generic [ref=e209]:
+                - text: 输入：nums = [1,2,1,2,1,2,1], m = 3, k = 3 输出：0 解释：输入数组中不存在长度为
+                - code [ref=e210]: k = 3
+                - text: 的子数组含有至少
+                - code [ref=e211]: m = 3
+                - text: 个互不相同元素的子数组。所以不存在几乎唯一子数组，最大和为 0 。
+              - paragraph [ref=e212]
+              - paragraph [ref=e213]:
+                - strong [ref=e214]: 提示：
+              - list [ref=e215]:
+                - listitem [ref=e216]:
+                  - code [ref=e217]:
+                    - text: 1 <= nums.length <= 2 * 10
+                    - superscript [ref=e218]: "4"
+                - listitem [ref=e219]:
+                  - code [ref=e220]: 1 <= m <= k <= nums.length
+                - listitem [ref=e221]:
+                  - code [ref=e222]:
+                    - text: 1 <= nums[i] <= 10
+                    - superscript [ref=e223]: "9"
+            - generic [ref=e224]:
+              - generic [ref=e225]:
+                - generic [ref=e226]:
+                  - generic [ref=e227]: 通过次数
+                  - generic [ref=e228]:
+                    - text: 46,943
+                    - generic [ref=e229]: /103.1K
+                - generic [ref=e231]:
+                  - generic [ref=e232]: 通过率
+                  - generic [ref=e233]: 45.5%
+              - separator [ref=e234]
+              - generic [ref=e236]:
+                - generic [ref=e237] [cursor=pointer]:
+                  - generic [ref=e239]:
+                    - img [ref=e241]
+                    - generic [ref=e243]: 相关标签
+                  - img [ref=e245]
+                - generic [ref=e247]:
+                  - generic [ref=e248]: 资深工程师
+                  - link "数组" [ref=e249] [cursor=pointer]:
+                    - /url: /tag/array/
+                  - link "哈希表" [ref=e250] [cursor=pointer]:
+                    - /url: /tag/hash-table/
+                  - link "滑动窗口" [ref=e251] [cursor=pointer]:
+                    - /url: /tag/sliding-window/
+                  - link "第 112 场双周赛" [ref=e252] [cursor=pointer]:
+                    - /url: /contest/biweekly-contest-112/
+              - separator [ref=e253]
+              - generic [ref=e256] [cursor=pointer]:
+                - generic [ref=e258]:
+                  - img "icon" [ref=e260]
+                  - generic [ref=e261]: 相关企业
+                - img [ref=e263]
+              - separator [ref=e265]
+              - generic [ref=e267]:
+                - generic [ref=e268] [cursor=pointer]:
+                  - generic [ref=e270]:
+                    - img [ref=e272]
+                    - generic [ref=e274]: 提示 1
+                  - img [ref=e276]
+                - generic [ref=e278]: Use a set or map to keep track of the number of distinct elements.
+              - separator [ref=e279]
+              - generic [ref=e281]:
+                - generic [ref=e282] [cursor=pointer]:
+                  - generic [ref=e284]:
+                    - img [ref=e286]
+                    - generic [ref=e288]: 提示 2
+                  - img [ref=e290]
+                - generic [ref=e292]: Use 2-pointers to maintain the size, the number of unique elements, and the sum of all the elements in all subarrays of size k from left to right dynamically.****
+              - separator [ref=e293]
+              - generic [ref=e295]:
+                - generic [ref=e296] [cursor=pointer]:
+                  - generic [ref=e298]:
+                    - img [ref=e300]
+                    - generic [ref=e302]: 评论 (0)
+                  - img [ref=e304]
+                - generic [ref=e307]:
+                  - generic [ref=e311]:
+                    - textbox "请输入评论..." [ref=e312]
+                    - generic [ref=e313]:
+                      - generic [ref=e315]:
+                        - img [ref=e317] [cursor=pointer]
+                        - img [ref=e320] [cursor=pointer]
+                        - img [ref=e323] [cursor=pointer]
+                        - img [ref=e326] [cursor=pointer]
+                      - button "评论" [disabled] [ref=e329] [cursor=pointer]
+                  - generic [ref=e330]:
+                    - generic [ref=e332]:
+                      - generic [ref=e333]:
+                        - generic [ref=e334]: 💡 讨论区规则
+                        - img [ref=e336] [cursor=pointer]
+                      - generic [ref=e338]:
+                        - paragraph [ref=e339]: 1. 请不要在评论区发表题解！
+                        - paragraph [ref=e340]: 2. 评论区可以发表关于对翻译的建议、对题目的疑问及其延伸讨论。
+                        - paragraph [ref=e341]: 3. 如果你需要整理题解思路，获得反馈从而进阶提升，可以去题解区进行。
+                    - button "排序:最热" [ref=e345] [cursor=pointer]:
+                      - generic [ref=e346]:
+                        - generic [ref=e347]: "排序:"
+                        - text: 最热
+                      - generic:
+                        - img
+                  - generic [ref=e349]: 暂无评论
+              - separator [ref=e350]
+              - generic [ref=e352]: 贡献者
+            - generic [ref=e356]: © 2026 领扣网络（上海）有限公司
+          - generic [ref=e358]:
+            - generic [ref=e359]:
+              - generic [ref=e360]:
+                - button "104" [ref=e362] [cursor=pointer]:
+                  - img [ref=e364]
+                  - generic [ref=e366]: "104"
+                - button "0" [ref=e367] [cursor=pointer]:
+                  - img [ref=e369]
+                  - generic [ref=e371]: "0"
+              - generic [ref=e373]:
+                - img [ref=e376] [cursor=pointer]
+                - button [ref=e378] [cursor=pointer]:
+                  - img [ref=e380]
+                - button [ref=e382] [cursor=pointer]:
+                  - img [ref=e384]
+            - generic [ref=e388]: 3 人在线
+        - generic [ref=e403]: 行 1，列 1
+        - generic:
+          - generic:
+            - generic:
+              - generic [ref=e405]:
+                - generic [ref=e407]:
+                  - button "Case 1" [ref=e408] [cursor=pointer]
+                  - button "Case 2" [ref=e409] [cursor=pointer]
+                  - button "Case 3" [ref=e410] [cursor=pointer]
+                  - button [ref=e411] [cursor=pointer]:
+                    - img [ref=e412]
+                - generic [ref=e414]:
+                  - generic [ref=e416]:
+                    - generic [ref=e417]: nums =
+                    - generic [ref=e419]: "[2,6,7,3,1,7]"
+                  - generic [ref=e421]:
+                    - generic [ref=e422]: m =
+                    - generic [ref=e424]: "3"
+                  - generic [ref=e426]:
+                    - generic [ref=e427]: k =
+                    - generic [ref=e429]: "4"
+              - generic [ref=e430]:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic [ref=e432]:
+                            - generic [ref=e433]: "1"
+                            - generic [ref=e434]: "2"
+                            - generic [ref=e435]: "3"
+                            - generic [ref=e436]: "4"
+                            - generic [ref=e437]: "5"
+                            - generic [ref=e438]: "6"
+                            - generic [ref=e439]: "7"
+                            - generic [ref=e440]: "8"
+                            - generic [ref=e441]: "9"
+                          - textbox [ref=e444]:
+                            - generic [ref=e445]: "[2,6,7,3,1,7]"
+                            - generic [ref=e446]: "3"
+                            - generic [ref=e447]: "4"
+                            - generic [ref=e448]: "[5,9,9,2,4,5,4]"
+                            - generic [ref=e449]: "1"
+                            - generic [ref=e450]: "3"
+                            - generic [ref=e451]: "[1,2,1,2,1,2,1]"
+                            - generic [ref=e452]: "3"
+                            - generic [ref=e453]: "3"
+            - generic [ref=e455]:
+              - generic [ref=e457] [cursor=pointer]:
+                - img [ref=e459]
+                - generic [ref=e461]: Source
+              - link [ref=e462] [cursor=pointer]:
+                - /url: /help-center/3812050/
+                - img [ref=e464]
+    - region "Notifications (F8)":
+      - list
+  - alert [ref=e468]

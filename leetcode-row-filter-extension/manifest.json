@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "LeetCode Row Filter",
+  "version": "0.1.0",
+  "description": "Show rows with .text-lc-green-60 and hide rows with .text-lc-icon-tertiary on LeetCode studyplan pages.",
+  "permissions": [],
+  "host_permissions": [
+    "https://leetcode.cn/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.cn/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LeetCode.cn Rating Badge — Options</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        margin: 16px;
+        max-width: 760px;
+      }
+      label {
+        display: block;
+        margin: 12px 0 6px;
+        font-weight: 600;
+      }
+      input[type='text'],
+      input[type='number'] {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px;
+      }
+      .row {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .row > * {
+        flex: 1;
+      }
+      .actions {
+        margin-top: 14px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      #status {
+        color: #0b5;
+      }
+      .hint {
+        color: #666;
+        font-size: 12px;
+        margin-top: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>LeetCode.cn Rating Badge</h2>
+
+    <label for="datasetUrl">Dataset URL</label>
+    <input id="datasetUrl" type="text" />
+    <div class="hint">Default: https://zerotrac.github.io/leetcode_problem_rating/data.json</div>
+
+    <div class="row">
+      <div>
+        <label for="cacheTtlDays">Cache TTL (days)</label>
+        <input id="cacheTtlDays" type="number" min="1" step="1" />
+      </div>
+      <div>
+        <label for="enableFallback">Fallback heuristic</label>
+        <input id="enableFallback" type="checkbox" /> Enable
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="save">Save</button>
+      <button id="refresh">Refresh dataset now</button>
+      <span id="status"></span>
+    </div>
+
+    <script src="options.js"></script>
+  </body>
+</html>
