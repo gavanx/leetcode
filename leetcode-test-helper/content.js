@@ -271,7 +271,7 @@
     lines.push(`function __lcRunExamples(fn, cases) {`);
     lines.push(`  for (let i = 0; i < cases.length; i++) {`);
     lines.push(`    const { args, expected, comment } = cases[i];`);
-    lines.push(`    if (comment) console.log(comment);`);
+    lines.push("    if (comment) console.log(`${i + 1}`, comment);");
     lines.push(`    try {`);
     lines.push(`      const got = fn(...args);`);
     lines.push(`      const gotOut = Array.isArray(got) ? got.join() : got;`);
@@ -281,11 +281,11 @@
       "      const color = ok ? 'color: #16a34a; font-weight: 700;' : 'color: #dc2626; font-weight: 700;';"
     );
     lines.push(
-      "      console.log(`%c${i + 1} ${ok ? 'OK' : 'FAIL'}`, color, { got: gotOut, expected: expectedOut });"
+      "      console.log(`%c${i + 1} ${ok ? 'OK' : 'FAIL'}`, color, { got: gotOut, expected: expectedOut }, `\n`);"
     );
     lines.push(`    } catch (e) {`);
     lines.push(
-      "      console.log(`%c${i + 1} ERROR`, 'color: #dc2626; font-weight: 700;', { error: String(e) }); throw e;"
+      "      console.log(`%c${i + 1} ERROR`, 'color: #dc2626; font-weight: 700;', { error: String(e) }, `\n`); throw e;"
     );
     lines.push(`    }`);
     lines.push(`  }`);
