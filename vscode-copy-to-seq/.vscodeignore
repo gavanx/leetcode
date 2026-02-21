@@ -1,0 +1,13 @@
+.gitignore
+.vscode/**
+src/**
+*.ts
+**/*.map
+node_modules/**
+.claude/**
+
+# keep
+!out/**
+!package.json
+!README.md
+!tsconfig.json

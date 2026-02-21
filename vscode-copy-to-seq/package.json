@@ -1,0 +1,58 @@
+{
+  "name": "copy-to-seq-renamer",
+  "displayName": "Copy to Seq Renamer",
+  "description": "Auto-rename newly created *-copy / * copy / * copy N files to incremented -N names.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "vscode": "^1.108.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "configuration": {
+      "title": "Copy To Seq",
+      "properties": {
+        "copyToSeq.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable auto renaming of newly created -copy files."
+        },
+        "copyToSeq.start": {
+          "type": "number",
+          "default": 1,
+          "minimum": 1,
+          "description": "Starting number when generating -N."
+        },
+        "copyToSeq.debug": {
+          "type": "boolean",
+          "default": false,
+          "description": "Log rename decisions to the 'CopyToSeq' Output channel."
+        },
+        "copyToSeq.pattern": {
+          "type": "string",
+          "default": "-copy",
+          "description": "(Deprecated) Suffix to detect. The extension currently detects -copy / copy / copy N."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.0",
+    "@types/vscode": "^1.108.0",
+    "@vscode/vsce": "^3.6.2",
+    "typescript": "^5.9.3"
+  }
+}
