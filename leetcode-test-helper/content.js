@@ -350,17 +350,17 @@
     title.style.cssText = 'font-weight:600;margin-bottom:6px;';
 
     const btn = document.createElement('button');
-    btn.textContent = 'Generate to console';
+    btn.textContent = 'Generate test code';
     btn.style.cssText =
       'background:#2f7; border:0; padding:6px 8px; border-radius:6px; cursor:pointer; font-weight:600;';
 
     const hint = document.createElement('div');
-    hint.textContent = 'Open DevTools console, then click.';
+    hint.textContent = 'Click to generate test code.';
     hint.style.cssText = 'opacity:.8;margin-top:6px;';
 
     btn.addEventListener('click', async () => {
       // Immediate feedback so it doesn't feel unresponsive.
-      const idleHintText = 'Open DevTools console, then click.';
+      const idleHintText = 'Click to generate test code.';
       hint.textContent = 'Generating...';
       btn.disabled = true;
       btn.style.opacity = '0.7';
