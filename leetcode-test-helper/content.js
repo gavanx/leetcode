@@ -268,12 +268,19 @@
     lines.push(`
       
       `);
+    lines.push(`const CASE_SLOW_MS = 20;`);
+    lines.push(`const TOTAL_SLOW_MS = 100;`);
+    lines.push('');
     lines.push(`function __lcRunExamples(fn, cases) {`);
+    lines.push(`  let totalMs = 0;`);
     lines.push(`  for (let i = 0; i < cases.length; i++) {`);
     lines.push(`    const { args, expected, comment } = cases[i];`);
     lines.push("    if (comment) console.log(`${i + 1}`, comment);");
+    lines.push(`    const t0 = performance.now();`);
     lines.push(`    try {`);
     lines.push(`      const got = fn(...args);`);
+    lines.push(`      const ms = performance.now() - t0;`);
+    lines.push(`      totalMs += ms;`);
     lines.push(`      const gotOut = Array.isArray(got) ? got.join() : got;`);
     lines.push(`      const expectedOut = Array.isArray(expected) ? expected.join() : expected;`);
     lines.push(`      const ok = gotOut === expectedOut;`);
@@ -281,14 +288,37 @@
       "      const color = ok ? 'color: #16a34a; font-weight: 700;' : 'color: #dc2626; font-weight: 700;';"
     );
     lines.push(
-      "      console.log(`%c${i + 1} ${ok ? 'OK' : 'FAIL'}`, color, { got: gotOut, expected: expectedOut }, `\n`);"
+      "      console.log(`%c${i + 1} ${ok ? 'OK' : 'FAIL'}`, color, { got: gotOut, expected: expectedOut });"
+    );
+    lines.push(`      const slow = ms > CASE_SLOW_MS;`);
+    lines.push(
+      "      const timeStyle = slow ? 'color:#d97706;font-weight:700;background:#fff7ed;padding:2px 4px;border-radius:4px;' : 'color:#64748b;';"
+    );
+    lines.push(
+      "      console.log(`%c${i + 1} ⏱: ${ms.toFixed(3)}ms`, timeStyle, `\\n`);"
     );
     lines.push(`    } catch (e) {`);
+    lines.push(`      const ms = performance.now() - t0;`);
+    lines.push(`      totalMs += ms;`);
+    lines.push(`      const slow = ms > CASE_SLOW_MS;`);
     lines.push(
-      "      console.log(`%c${i + 1} ERROR`, 'color: #dc2626; font-weight: 700;', { error: String(e) }, `\n`); throw e;"
+      "      const timeStyle = slow ? 'color:#d97706;font-weight:700;background:#fff7ed;padding:2px 4px;border-radius:4px;' : 'color:#64748b;';"
+    );
+    lines.push(
+      "      console.log(`%c${i + 1} ⏱: ${ms.toFixed(3)}ms`, timeStyle, `\\n`);"
+    );
+    lines.push(
+      "      console.log(`%c${i + 1} ERROR`, 'color: #dc2626; font-weight: 700;', { error: String(e) }); throw e;"
     );
     lines.push(`    }`);
     lines.push(`  }`);
+    lines.push(`  const totalSlow = totalMs > TOTAL_SLOW_MS;`);
+    lines.push(
+      "  const totalStyle = totalSlow ? 'color:#dc2626;font-weight:800;background:#fee2e2;padding:2px 4px;border-radius:4px;border:1px solid #dc2626;' : 'color:#64748b;';"
+    );
+    lines.push(
+      "  console.log(`%c⏱ total: ${totalMs.toFixed(3)}ms`, totalStyle);"
+    );
     lines.push(`}`);
     lines.push('');
 

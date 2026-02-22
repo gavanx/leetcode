@@ -4,17 +4,14 @@
   "version": "0.1.0",
   "description": "Parse examples on LeetCode problem pages and generate console.log test cases.",
   "permissions": [],
-  "host_permissions": [
-    "https://leetcode.cn/*"
-  ],
+  "host_permissions": ["https://leetcode.cn/*"],
   "content_scripts": [
     {
       "matches": [
-        "https://leetcode.cn/problems/*"
+        "https://leetcode.cn/problems/*",
+        "https://leetcode.cn/contest/*"
       ],
-      "js": [
-        "content.js"
-      ],
+      "js": ["content.js"],
       "run_at": "document_idle",
       "all_frames": true
     }
