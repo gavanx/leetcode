@@ -359,17 +359,35 @@
     hint.style.cssText = 'opacity:.8;margin-top:6px;';
 
     btn.addEventListener('click', async () => {
+      // Immediate feedback so it doesn't feel unresponsive.
+      const idleHintText = 'Open DevTools console, then click.';
+      hint.textContent = 'Generating...';
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+      btn.style.cursor = 'not-allowed';
+
       const root = getDescriptionRoot();
       const examples = parseExamples(root);
       const fnName = guessFunctionName();
       const code = generateTests(examples, fnName);
 
+      let resetTimer = null;
       try {
         await navigator.clipboard.writeText(code);
-        hint.textContent = 'Copied to clipboard. Paste into your local runner.';
+        hint.textContent = 'Generated & copied to clipboard. Paste into your local runner.';
       } catch {
-        hint.textContent = 'Clipboard blocked. Copied code printed to console.';
+        hint.textContent = 'Generated. Clipboard blocked; code printed to console.';
         console.log(code);
+      } finally {
+        btn.disabled = false;
+        btn.style.opacity = '';
+        btn.style.cursor = '';
+
+        // Reset hint after a short while so the panel returns to its idle state.
+        if (resetTimer) clearTimeout(resetTimer);
+        resetTimer = setTimeout(() => {
+          hint.textContent = idleHintText;
+        }, 2000);
       }
     });
 
