@@ -273,6 +273,7 @@
     lines.push('');
     lines.push(`function __lcRunExamples(fn, cases) {`);
     lines.push(`  let totalMs = 0;`);
+    lines.push(`  let allPassed = true;`);
     lines.push(`  for (let i = 0; i < cases.length; i++) {`);
     lines.push(`    const { args, expected, comment } = cases[i];`);
     lines.push("    if (comment) console.log(`${i + 1}`, comment);");
@@ -284,6 +285,7 @@
     lines.push(`      const gotOut = Array.isArray(got) ? got.join() : got;`);
     lines.push(`      const expectedOut = Array.isArray(expected) ? expected.join() : expected;`);
     lines.push(`      const ok = gotOut === expectedOut;`);
+    lines.push(`      if (!ok) allPassed = false;`);
     lines.push(
       "      const color = ok ? 'color: #16a34a; font-weight: 700;' : 'color: #dc2626; font-weight: 700;';"
     );
@@ -298,6 +300,7 @@
       "      console.log(`%c${i + 1} ⏱: ${ms.toFixed(3)}ms`, timeStyle, `\\n`);"
     );
     lines.push(`    } catch (e) {`);
+    lines.push(`      allPassed = false;`);
     lines.push(`      const ms = performance.now() - t0;`);
     lines.push(`      totalMs += ms;`);
     lines.push(`      const slow = ms > CASE_SLOW_MS;`);
@@ -317,7 +320,7 @@
       "  const totalStyle = totalSlow ? 'color:#dc2626;font-weight:800;background:#fee2e2;padding:2px 4px;border-radius:4px;border:1px solid #dc2626;' : 'color:#64748b;';"
     );
     lines.push(
-      "  console.log(`%c⏱ total: ${totalMs.toFixed(3)}ms`, totalStyle);"
+      "  console.log(`%c⏱ total: ${totalMs.toFixed(3)}ms [${allPassed ? 'success' : 'fail'}]`, totalStyle);"
     );
     lines.push(`}`);
     lines.push('');

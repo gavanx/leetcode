@@ -281,6 +281,7 @@ query problemsetQuestionListV2($filters: QuestionFilterInput, $limit: Int, $sear
     }
 
     if (emphasize) {
+      span.textContent = '❌ 未完成0';
       span.style.fontWeight = '700';
       span.style.fontSize = '13px';
       span.style.padding = '1px 8px';
