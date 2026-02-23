@@ -506,6 +506,9 @@ query problemsetQuestionListV2($filters: QuestionFilterInput, $limit: Int, $sear
         for (const old of idCellInner.querySelectorAll(`span[${BADGE_ATTR}="1"]`)) {
           old.remove();
         }
+        for (const old of idCellInner.querySelectorAll('span[data-lc-problem-index="1"]')) {
+          old.remove();
+        }
 
         // 题目链接在第二列，但这里直接全行找 leetcode problems 链接
         const a = tr.querySelector('a[href^="https://leetcode.cn/problems/"]');
@@ -530,8 +533,24 @@ query problemsetQuestionListV2($filters: QuestionFilterInput, $limit: Int, $sear
         // 翻页/排序时会复用 row 节点：每次都按当前状态重设 opacity
         tr.style.opacity = kind === 'done' ? '0.3' : '';
 
+        // ProblemIndex 在表格倒数第 2 列（Q1/Q2/Q3/Q4）
+        const problemIndexCell = tds.length >= 2 ? tds[tds.length - 2] : null;
+        const problemIndex = (problemIndexCell?.querySelector('.cell')?.textContent || '').trim();
+
         counts[kind] += 1;
         idCellInner.appendChild(makeBadge(kind));
+
+        if (problemIndex && problemIndex !== 'Q1' && problemIndex !== 'Q2') {
+          const text = document.createElement('span');
+          text.setAttribute('data-lc-problem-index', '1');
+          text.textContent = ` ${problemIndex}`;
+          text.style.marginLeft = '4px';
+          text.style.color = problemIndex === 'Q4' ? '#cf222e' : '#6e7781';
+          text.style.fontWeight = problemIndex === 'Q4' ? '700' : '400';
+          text.style.fontSize = '12px';
+          text.style.verticalAlign = 'middle';
+          idCellInner.appendChild(text);
+        }
       }
     }
 
